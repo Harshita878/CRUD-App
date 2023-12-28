@@ -5,9 +5,13 @@ import Category from './component/Category';
 import RootLayout from './component/RootLayout';
 import Detail from './component/Detail';
 import Update from './component/Update';
+import Signup from './component/Signup';
+import Login from './component/Login';
 
 const router = createBrowserRouter([
-  {path:'' , element:<RootLayout/>,children:[
+  {path:'login', element:<Login/>},
+  {path:'signup', element:<Signup/>},
+  {path:'dashboard' , element:<RootLayout/>,children:[
     {path:'', element:<Category/>},
     {path:'category', element:<Category/>},
     {path:'add-category', element:<AddCategory/>},
