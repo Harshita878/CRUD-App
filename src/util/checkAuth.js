@@ -6,7 +6,7 @@ export function islogin()
 
     if(!(token))
     {
-        return redirect('/login')
+        return redirect('/login');
     }
 
     else
