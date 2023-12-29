@@ -38,7 +38,11 @@ const Category = () => {
   }
 
   const getData = () =>{
-    axios.get('http://www.localhost:3000/category')
+    axios.get('http://www.localhost:3000/category',{
+      headers:{
+        Authorization:'Bearer '+ localStorage.getItem('token')
+      }
+    })
       .then((res) => {
         setHasError(false);
         setLoading(false);

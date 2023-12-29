@@ -1,11 +1,22 @@
  import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
  
  const MainNav = () => {
+  let navigate = useNavigate();
+  const logoutHandler = ()=>{
+    
+    localStorage.clear();
+    navigate('/login');
+  }
+
    return (
      <>
-        <Link to='/category'>Category list</Link>
-        <Link to='/add-category'>Add new Category</Link>
+        <Link to='/dashboard/category'>Category list</Link>
+        <Link to='/dashboard/add-category'>Add new Category</Link>
+        <br/>
+        <p>Hello {localStorage.getItem('userName')}!</p>
+        <button onClick={logoutHandler}>Logout</button>
      </>
    )
  }
